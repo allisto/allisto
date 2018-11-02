@@ -1,20 +1,20 @@
 from flask import Flask
-from flask_restful import Resource, Api
+from flask_restful import reqparse, Resource, Api
+from model import Allisto
+import numpy as np
+
 app = Flask(__name__)
 api = Api(app)
 
 # Create a new Model Object
-
-clf_path = 'path'
-# with open(clf_path, 'rb') as f:
-# Open Persistant Model
+model = Allisto()
 
 # argument parsing
 parser = reqparse.RequestParser()
 parser.add_argument('query')
 
 
-class Allisto(Resource):
+class AllistoAPI(Resource):
 
     def get(self):
 
@@ -22,10 +22,13 @@ class Allisto(Resource):
         args = parser.parse_args()
         user_query = args['query']
 
-        # vectorize
-        parameters = 1  # just in case
+        # vectorize the user's query and make a prediction
+        model.vectorizer_fit(np.array([user_query]))
+        uq_vectorized = model.vectorizer_transform(np.array([user_query]))
 
-        if parameters == 1:
+        value = model.classifier.predict(uq_vectorized)
+
+        if value == 1:
             prediction = 'Autistic'
         else:
             prediction = 'Non Autistic'
@@ -35,6 +38,6 @@ class Allisto(Resource):
         return output
 
 
-api.add_resource(Allisto, '/')
+api.add_resource(AllistoAPI, '/api')
 if __name__ == '__main__':
     app.run(debug=True)

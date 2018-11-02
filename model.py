@@ -4,6 +4,7 @@ from keras.layers import Dense
 from keras.models import load_model
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 class Allisto:
@@ -18,6 +19,14 @@ class Allisto:
         self.X_train = self.sc.fit_transform(self.X_train)
         self.X_test = self.sc.transform(self.X_test)
         self.classifier = Sequential()
+        self.vectorizer = TfidfVectorizer()
+
+    def vectorizer_fit(self, X):
+        self.vectorizer.fit(X)
+
+    def vectorizer_transform(self, X):
+        X_transformed = self.vectorizer.transform(X)
+        return X_transformed
 
     def build_model(self):
         self.classifier.add(Dense(output_dim=6, init='uniform',
@@ -34,9 +43,8 @@ class Allisto:
                             batch_size=10, nb_epoch=100)
 
     def predict(self, input_params):
-        return self.classifier.predict(input_params)>=0
-        
-        
+        return self.classifier.predict(input_params) >= 0
+
     def save(self):
         self.classifier.save('model.h5')
 
@@ -46,6 +54,7 @@ class Allisto:
 
 model = Allisto()
 
-import numpy as np
-value = model.predict(np.array([[0.13201746241462,0.0846523059846263,0.130812215724496,0.0480311890838207,0.210136452241715,0.162105263157895,1.31334024389288,4.99252406943563,0.972450815429729,0.787036038235428,0.0282001299545159,0.13201746241462,0.178684467460517,0.015984015984016,0.275862068965517,0.751302083333333,0.0078125,6.1953125,6.1875
-]]))
+model.load()
+
+# import numpy as np
+# value = clf.predict(np.array([[0.13201746241462,0.0846523059846263,0.130812215724496,0.0480311890838207,0.210136452241715,0.162105263157895,1.31334024389288,4.99252406943563,0.972450815429729,0.787036038235428,0.0282001299545159,0.13201746241462,0.178684467460517,0.015984015984016,0.275862068965517,0.751302083333333,0.0078125,6.1953125,6.1875]]))
