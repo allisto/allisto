@@ -36,12 +36,14 @@ class AllistoAPI(Resource):
         value = model.classifier.predict(uq_vectorized)
         """
 
-        value = random.randint(0, 1)
+        value = random.randint(40, 79)
 
-        if value == 1:
-            prediction = 'Autistic'
+        if value >= 50:
+            prediction = str(value) + \
+                '% Chances of being diagonised with Autism'
         else:
-            prediction = 'Non Autistic'
+            prediction = str(value) + \
+                '% Chances of being diagonised with Autism'
 
         output = {'prediction': prediction}
 
