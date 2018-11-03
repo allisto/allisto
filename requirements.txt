@@ -6,3 +6,6 @@ sklearn
 flask
 librosa
 timeside
+pyAudioAnalysis
+eyed3
+pydub
