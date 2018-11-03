@@ -32,12 +32,21 @@ class AllistoAPI(Resource):
         value = model.classifier.predict(uq_vectorized)
         """
 
+        user_query = int(user_query)
+
+        if user_query >= 0 and user_query <= 5:
+            prediction = random.randint(40, 45)
+        else:
+            prediction = random.randint(60, 65)
+
+        """
         value = random.randint(0, 1)
 
         if value == 1:
             prediction = 'Autistic'
         else:
             prediction = 'Non Autistic'
+        """
 
         output = {'prediction': prediction}
 

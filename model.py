@@ -52,6 +52,15 @@ class Allisto:
         self.classifier = load_model('model.h5')
 
 
+class AllistoPredict:
+
+    def __init__(self):
+        self.model = load_model('model.h5')
+
+    def predict(self, input_params):
+        return self.model.classifier.predict(input_params) >= 0
+
+
 model = Allisto()
 
 model.load()
