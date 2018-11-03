@@ -2,6 +2,7 @@ from flask import Flask
 from flask_restful import reqparse, Resource, Api
 from model import Allisto
 import numpy as np
+import random
 
 app = Flask(__name__)
 api = Api(app)
@@ -23,10 +24,15 @@ class AllistoAPI(Resource):
         user_query = args['query']
 
         # vectorize the user's query and make a prediction
+
+        """
         model.vectorizer_fit(np.array([user_query]))
         uq_vectorized = model.vectorizer_transform(np.array([user_query]))
 
         value = model.classifier.predict(uq_vectorized)
+        """
+
+        value = random.randint(0, 1)
 
         if value == 1:
             prediction = 'Autistic'
