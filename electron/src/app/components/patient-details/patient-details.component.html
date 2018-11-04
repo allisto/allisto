@@ -1,0 +1,71 @@
+<div class="container">
+  <h1><b>{{ref}}</b></h1>
+</div>
+
+<mat-card>
+  <div class="container" style="margin:2em">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>{{name}}</h3>
+      </div>
+      <div class="col-md-6">
+        <h3>{{dob}}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>{{gender}}</h3>
+      </div>
+      <div class="col-md-6">
+        <h3>{{bloodGroup}}</h3>
+      </div>
+    </div>
+  </div>
+</mat-card>
+
+
+<div class="container">
+  <h1><b>Previous Medication</b></h1>
+</div>
+
+<mat-card>
+  <ul>
+    <li *ngFor="let hero of medication">
+      {{ hero }}
+    </li>
+  </ul>
+</mat-card>
+
+<div class="container">
+  <h1><b>Previous Vaccines</b></h1>
+</div>
+<mat-card>
+    <ul>
+        <li *ngFor="let hero of vaccines">
+          {{ hero }}
+        </li>
+      </ul>
+</mat-card>
+
+
+<div class="container">
+    <h1><b>Add Vaccines or Medication</b></h1>
+  </div>
+  <mat-card>
+ <div class = "container">
+   <div class = "row">
+     <div class = "col-md-6">
+        <button (click) = "addVacc()"mat-button>Add Moc Vacc</button>
+     </div>
+     <div class = "col-md-6">
+        <button (click) = "addMed()"mat-button>Add Moc Med</button>
+      </div>
+   </div>
+ </div>
+  </mat-card>
+
+
+  <div class="container">
+      <h1><b>Chances of Autism to the baby: {{autism}}</b></h1>
+    </div>
+   

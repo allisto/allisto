@@ -1,0 +1,15 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+.body{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    overflow-x: hidden;
+    overflow-y: auto;  
+  }
+  .mat-card{
+    background: #303030
+}
