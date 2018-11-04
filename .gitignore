@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#removed due to important cloud credentials problem
+android/app/src/main/java/lmniit/hackx/aesher/lnmniit_hacx/fragments/Chatbot.java
+
