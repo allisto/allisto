@@ -1,0 +1,11 @@
+pandas
+numpy
+tensorflow
+keras
+sklearn
+flask
+librosa
+timeside
+pyAudioAnalysis
+eyed3
+pydub
