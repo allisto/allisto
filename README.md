@@ -30,7 +30,7 @@ She recommended the researchers reevaluate the infants when they are 36 months o
 
 Identifying autism early in an infant’s development would benefit the autism field of research by allowing specialists to initiate intervention measures earlier, Sheinkopf said.
 
-#### Unfortunately there is no way we can detect autism in children using the above mentioned cry analysis technique today. All we can do is some MRI scans, which again is not safe for infants. They can do small or long term damage to the infant's mental health
+#### Unfortunately there is no way we can detect autism in children using the above mentioned cry analysis technique today. All we can do is some MRI scans, which again is not safe for infants. They can do short or long term damage to the infant's mental health
 
 We created a normal and more subtle way of doing the cry analysis. 
 
@@ -46,4 +46,4 @@ We make all of these four work together in harmony to record audio of children, 
 
 We believe we can cure. We believe you can help us do it better.
 
-***Made with by ❤️ Team Allisto***
+***Made with ❤️ by Team Allisto***
