@@ -1,4 +1,6 @@
 # Allisto - We Do Good
+[![Gitter chat](https://badges.gitter.im/allisto/community/gitter.png)](https://gitter.im/allisto/community/)
+
 
 ### A combination of computer software for detection and treatment of autism in infants
 
